@@ -46,5 +46,5 @@ jobs:
     - name: Deploy to Elastic Beanstalk
       run: |
         zip -r deploy.zip . -x .git/\*
-        aws elasticbeanstalk create-application-version --application-name "my-nodejs-app" --version-label ${{ github.sha }} --source-bundle S3Bucket=my-bucket,S3Key=deploy.zip
-        aws elasticbeanstalk update-environment --environment-name "my-nodejs-env" --version-label ${{ github.sha }}
+        aws elasticbeanstalk create-application-version --application-name "git-hub-actions" --version-label ${{ github.sha }} --source-bundle S3Bucket=githubactions-bucket-haroon,S3Key=deploy.zip
+        aws elasticbeanstalk update-environment --environment-name "Git-hub-actions-env" --version-label ${{ github.sha }}
