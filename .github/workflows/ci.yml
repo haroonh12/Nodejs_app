@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to Elastic Beanstalk
         run: |
           aws elasticbeanstalk create-application-version --application-name "git-hub-actions" --version-label ${{ github.sha }} --source-bundle S3Bucket=githubactions-bucket-haroon,S3Key=deploy.zip
-          aws elasticbeanstalk update-environment --environment-name "git-hub-actions" --version-label ${{ github.sha }}
+          aws elasticbeanstalk update-environment --environment-name "Git-hub-actions-env" --version-label ${{ github.sha }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
